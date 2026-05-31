@@ -1,0 +1,9 @@
+{
+  "appId": "com.hamari.chat",
+  "appName": "Чат с Хамари",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  }
+}

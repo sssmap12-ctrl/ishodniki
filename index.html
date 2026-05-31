@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Интерактивная визуальная новелла — чат-симулятор с Хамари">
+  <title>Чат с Хамари 💕</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- ============ INSTALL / LOADER SCREEN ============ -->
+    <div id="install-screen" class="screen active">
+      <div class="hearts-bg">
+        <span class="heart">📥</span>
+        <span class="heart">⚡</span>
+        <span class="heart">📂</span>
+        <span class="heart">🔥</span>
+        <span class="heart">🚀</span>
+        <span class="heart">📦</span>
+      </div>
+
+      <div class="install-content">
+        <div class="avatar-container">
+          <div class="avatar-ring">
+            <img src="photo/easy/1.jpg" alt="Хамари" id="install-avatar">
+          </div>
+          <div class="online-badge installer-badge">📥</div>
+        </div>
+
+        <h1 class="install-title">Установка ресурсов</h1>
+        <p class="install-subtitle">Для полноценной игры на Android необходимо скачать и установить интим-фотографии в корень приложения.</p>
+
+        <!-- Google Drive Source Info -->
+        <div class="source-info">
+          <span class="source-label">Источник:</span> Google Drive Folder 📂
+        </div>
+
+        <!-- Download & Progress Area -->
+        <div class="progress-box">
+          <div class="progress-info">
+            <span id="install-status">Ожидание запуска...</span>
+            <span id="install-percent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar-fill" id="install-progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <!-- Real-time extraction logs console -->
+        <div class="console-box" id="console-box">
+          <div class="console-line">[Система] Готов к установке ресурсов...</div>
+          <div class="console-line">[Инфо] Папка назначения: /sdcard/Android/data/com.hamari.chat/files/</div>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn-start-install">
+            <span class="btn-icon">⚡</span>
+            Скачать и установить фото
+          </button>
+          <button class="btn btn-primary hidden" id="btn-launch-game">
+            <span class="btn-icon">💬</span>
+            Начать играть
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CHARACTER SELECT SCREEN ============ -->
+    <div id="character-select-screen" class="screen">
+      <div class="hearts-bg">
+        <span class="heart">💜</span>
+        <span class="heart">✨</span>
+        <span class="heart">🤍</span>
+        <span class="heart">🌸</span>
+      </div>
+
+      <div class="start-content" style="max-width: 100%;">
+        <h1 class="start-title" style="font-size: 24px;">Выбор персонажа</h1>
+        <p class="start-subtitle">С кем бы ты хотел пообщаться сегодня?</p>
+
+        <div class="characters-grid">
+          <!-- Hamari Card -->
+          <div class="char-card" id="select-hamari">
+            <div class="char-avatar-ring">
+              <img src="photo/easy/1.jpg" alt="Хамари">
+            </div>
+            <div class="char-info">
+              <h3 class="char-name">Хамари</h3>
+              <p class="char-desc">Милая и нежная. Ищет романтики и понимания.</p>
+            </div>
+          </div>
+
+          <!-- Rika Card -->
+          <div class="char-card" id="select-rika">
+            <div class="char-avatar-ring rika-ring">
+              <img src="photo/Рика/обычные/в спорт зале.jpg" alt="Рика">
+            </div>
+            <div class="char-info">
+              <h3 class="char-name">Рика</h3>
+              <p class="char-desc">Стеснительная фитоняшка. Любит подчиняться и ждет твоих команд.</p>
+            </div>
+          </div>
+
+          <!-- Nastya Card -->
+          <div class="char-card" id="select-nastya">
+            <div class="char-avatar-ring nastya-ring">
+              <img src="photo/Настя/обычные/в школе днем.jpg" alt="Настя">
+            </div>
+            <div class="char-info">
+              <h3 class="char-name">Настя</h3>
+              <p class="char-desc">Холодная и неприступная. Придется сильно постараться, чтобы растопить её сердце.</p>
+            </div>
+          </div>
+
+          <!-- Lisa Card -->
+          <div class="char-card" id="select-lisa">
+            <div class="char-avatar-ring lisa-ring">
+              <img src="photo/Лиза/обычные/в школьной светлой форме с красным галстуком  в школе селфи сидит за партой рано утром.jpg" alt="Лиза">
+            </div>
+            <div class="char-info">
+              <h3 class="char-name">Лиза</h3>
+              <p class="char-desc">Милая и стеснительная. Постепенно раскрывается и доверяет тебе самое сокровенное. 🌸</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ START SCREEN ============ -->
+    <div id="start-screen" class="screen">
+      <div class="hearts-bg">
+        <span class="heart">💕</span>
+        <span class="heart">✨</span>
+        <span class="heart">💖</span>
+        <span class="heart">🌸</span>
+        <span class="heart">💗</span>
+        <span class="heart">💫</span>
+      </div>
+
+      <div class="start-content">
+        <div class="avatar-container">
+          <div class="avatar-ring">
+            <img src="photo/easy/1.jpg" alt="Хамари" id="start-avatar">
+          </div>
+          <div class="online-badge"></div>
+        </div>
+
+        <h1 class="start-title">Хамари</h1>
+        <p class="start-subtitle">Привет! Я уже жду тебя...<br>Напиши своё имя, чтобы начать 💬</p>
+
+        <div class="name-input-group">
+          <input 
+            type="text" 
+            class="name-input" 
+            id="name-input" 
+            placeholder="Твоё имя..." 
+            maxlength="20" 
+            autocomplete="off"
+            autofocus
+          >
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" id="btn-start-chat" disabled>
+            <span class="btn-icon">💬</span>
+            Начать чат
+          </button>
+          <button class="btn btn-secondary" id="btn-open-gallery">
+            <span class="btn-icon">📸</span>
+            Галерея фото
+          </button>
+          <a href="https://t.me/+sNwHTWHCAOxhYjIy" target="_blank" class="btn btn-tg" id="btn-telegram">
+            <span class="btn-icon">✈️</span>
+            Наш Telegram канал
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ CHAT SCREEN ============ -->
+    <div id="chat-screen" class="screen">
+      <div class="chat-header">
+        <button class="chat-back-btn" id="chat-back-btn" title="Назад">←</button>
+        <img src="photo/easy/1.jpg" alt="Хамари" class="chat-avatar">
+        <div class="chat-user-info">
+          <div class="chat-user-name">Хамари</div>
+          <div class="chat-user-status">В сети</div>
+        </div>
+        <div class="chat-header-actions">
+          <a href="https://t.me/+sNwHTWHCAOxhYjIy" target="_blank" class="chat-header-btn tg-header-btn" id="btn-tg-chat" title="Telegram канал">✈️</a>
+          <button class="chat-header-btn" id="btn-gallery-from-chat" title="Галерея">🖼️</button>
+          <button class="chat-header-btn" id="btn-restart" title="Начать заново">🔄</button>
+        </div>
+      </div>
+
+      <div class="progress-bar-container">
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progress-fill" style="width: 2%"></div>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-date"><span>Сегодня</span></div>
+      </div>
+
+      <div class="choices-panel hidden" id="choices-panel"></div>
+    </div>
+
+    <!-- ============ GALLERY SCREEN ============ -->
+    <div id="gallery-screen" class="screen">
+      <div class="gallery-header">
+        <button class="chat-back-btn" id="gallery-back-btn" title="Назад">←</button>
+        <h2 class="gallery-title">Галерея</h2>
+        <div class="gallery-counter">
+          <span id="gallery-unlocked">0</span> / <span id="gallery-total">21</span>
+        </div>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="easy">Обычные</button>
+        <button class="filter-btn" data-filter="medium">Средние</button>
+        <button class="filter-btn" data-filter="hard">Хард 🔥</button>
+        <button class="filter-btn" data-filter="unlocked">Открытые ✅</button>
+      </div>
+
+      <a href="https://t.me/+sNwHTWHCAOxhYjIy" target="_blank" class="gallery-tg-banner">
+        <span class="tg-banner-icon">🔞</span>
+        <div class="tg-banner-content">
+          <div class="tg-banner-title">Секретный Telegram</div>
+          <div class="tg-banner-sub">Эксклюзивный контент и горячие фото здесь! 🔥</div>
+        </div>
+      </a>
+
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img src="" alt="" id="lightbox-img">
+    <div class="lightbox-info">
+      <div class="lightbox-name" id="lightbox-name"></div>
+      <div class="lightbox-tier" id="lightbox-tier"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/story.js"></script>
+  <script src="js/story_rika.js"></script>
+  <script src="js/story_nastya.js"></script>
+  <script src="js/story_lisa.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/gallery.js"></script>
+
+</body>
+</html>
